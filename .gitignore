@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large competition datasets (over 20 MB, rejected by GitHub without LFS)
+*.npy
+*.pkl
+*.joblib
+*.pt
+*.zip
+
+# Local caches and scratch logs
+cache/
+.system_generated/
+*.log
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.venv/
