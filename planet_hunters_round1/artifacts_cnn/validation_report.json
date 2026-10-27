@@ -1,0 +1,362 @@
+{
+  "labels": [
+    "planet",
+    "eclipsing_binary",
+    "background_binary",
+    "pulsating_star",
+    "flare_star",
+    "starspots",
+    "instrument_glitch",
+    "quiet_star"
+  ],
+  "oof_macro_f1": 0.7004654202571657,
+  "stratified_fold_macro_f1": [
+    0.6929986960621626,
+    0.6973771693873145,
+    0.6976117250415742,
+    0.7105220323490196,
+    0.7033461613382782
+  ],
+  "ensemble_oof_macro_f1_by_seed": [
+    0.7022182391247063,
+    0.7013730440763382,
+    0.6990539597720987
+  ],
+  "camera_grouped_macro_f1": {
+    "mean": 0.6926752656179848,
+    "std": 0.007908790335446215,
+    "folds": [
+      0.7041971266050541,
+      0.6819170747731483,
+      0.6931337612489878,
+      0.691453099844749
+    ],
+    "cross_fitted_clean_baseline_macro_f1": 0.7034547328596837,
+    "cross_fitted_macro_f1_after_multipliers": 0.7034547328596837,
+    "cross_fitted_macro_f1_by_camera_after_multipliers": [
+      0.7154485094894976,
+      0.6945065514394785,
+      0.7021899351210941,
+      0.7016739353886647
+    ],
+    "multiplier_gain_gate": 0.0075,
+    "suspect_labels_excluded_from_multiplier_tuning": 284,
+    "final_test_class_multipliers": {
+      "planet": 1.0,
+      "eclipsing_binary": 1.0,
+      "background_binary": 1.0,
+      "pulsating_star": 1.0,
+      "flare_star": 1.0,
+      "starspots": 1.0,
+      "instrument_glitch": 1.0,
+      "quiet_star": 1.0
+    },
+    "synthetic_shift_mean": 0.6845231420437743,
+    "synthetic_shift_folds": [
+      0.6937970587770503,
+      0.6741906945259384,
+      0.6856830524675696,
+      0.6844217624045388
+    ],
+    "synthetic_shift_definition": "feature-level stress: +25% noise, +20% centroid scale, +0.08 low-frequency power, and stronger dump overlap"
+  },
+  "sector_adversarial_validation": {
+    "heldout_sector_auc": 0.8487582222222223,
+    "top_sector_discriminators": [
+      {
+        "feature": "bls_period",
+        "gain": 720
+      },
+      {
+        "feature": "bls_dump_overlap_excess",
+        "gain": 620
+      },
+      {
+        "feature": "orbit_level_diff",
+        "gain": 507
+      },
+      {
+        "feature": "bls_duration",
+        "gain": 313
+      },
+      {
+        "feature": "mad_vs_tmag_expected",
+        "gain": 205
+      },
+      {
+        "feature": "dump_response_mad_ratio_vs_tmag",
+        "gain": 172
+      },
+      {
+        "feature": "p99",
+        "gain": 162
+      },
+      {
+        "feature": "orbit_amplitude_ratio",
+        "gain": 143
+      },
+      {
+        "feature": "scattered_response_mad_ratio_vs_tmag",
+        "gain": 141
+      },
+      {
+        "feature": "bls_odd_even",
+        "gain": 135
+      },
+      {
+        "feature": "bls_inner_full_depth_ratio",
+        "gain": 124
+      },
+      {
+        "feature": "power_gdor",
+        "gain": 122
+      },
+      {
+        "feature": "bls_edge_scatter_ratio",
+        "gain": 121
+      },
+      {
+        "feature": "single_spike_count",
+        "gain": 121
+      },
+      {
+        "feature": "contamination",
+        "gain": 118
+      },
+      {
+        "feature": "glitch_jump_max_snr",
+        "gain": 116
+      },
+      {
+        "feature": "bls_snr",
+        "gain": 112
+      },
+      {
+        "feature": "flux_centroid_column_corr",
+        "gain": 110
+      },
+      {
+        "feature": "power_rr",
+        "gain": 109
+      },
+      {
+        "feature": "teff",
+        "gain": 103
+      }
+    ],
+    "interpretation": "Diagnostic only: a high AUC identifies sector-signature features for review; it is not a classification score."
+  },
+  "class_multipliers": {
+    "planet": 1.0,
+    "eclipsing_binary": 1.0,
+    "background_binary": 1.0,
+    "pulsating_star": 1.0,
+    "flare_star": 1.0,
+    "starspots": 1.0,
+    "instrument_glitch": 1.0,
+    "quiet_star": 1.0
+  },
+  "label_noise_candidates_downweighted": 284,
+  "classification_report": {
+    "planet": {
+      "precision": 0.6263157894736842,
+      "recall": 0.4993006993006993,
+      "f1-score": 0.5556420233463035,
+      "support": 2145.0
+    },
+    "eclipsing_binary": {
+      "precision": 0.8570624648283625,
+      "recall": 0.6777926123720516,
+      "f1-score": 0.7569582504970179,
+      "support": 2247.0
+    },
+    "background_binary": {
+      "precision": 0.7008928571428571,
+      "recall": 0.587281795511222,
+      "f1-score": 0.6390773405698779,
+      "support": 1604.0
+    },
+    "pulsating_star": {
+      "precision": 0.8441780821917808,
+      "recall": 0.7496198682209833,
+      "f1-score": 0.7940939597315436,
+      "support": 1973.0
+    },
+    "flare_star": {
+      "precision": 0.8256445047489823,
+      "recall": 0.6746119733924612,
+      "f1-score": 0.7425259304453935,
+      "support": 1804.0
+    },
+    "starspots": {
+      "precision": 0.5925058548009368,
+      "recall": 0.6145038167938931,
+      "f1-score": 0.6033043774484755,
+      "support": 2882.0
+    },
+    "instrument_glitch": {
+      "precision": 0.8412222887956861,
+      "recall": 0.8158047646717025,
+      "f1-score": 0.8283185840707965,
+      "support": 1721.0
+    },
+    "quiet_star": {
+      "precision": 0.5763481551561022,
+      "recall": 0.8405077262693157,
+      "f1-score": 0.6838028959479179,
+      "support": 3624.0
+    },
+    "accuracy": 0.6918333333333333,
+    "macro avg": {
+      "precision": 0.733021249642299,
+      "recall": 0.6824279070665411,
+      "f1-score": 0.7004654202571657,
+      "support": 18000.0
+    },
+    "weighted avg": {
+      "precision": 0.7106975588510258,
+      "recall": 0.6918333333333333,
+      "f1-score": 0.6925801521222295,
+      "support": 18000.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      1071,
+      43,
+      86,
+      28,
+      31,
+      355,
+      77,
+      454
+    ],
+    [
+      168,
+      1523,
+      237,
+      23,
+      14,
+      122,
+      13,
+      147
+    ],
+    [
+      148,
+      172,
+      942,
+      32,
+      20,
+      112,
+      10,
+      168
+    ],
+    [
+      27,
+      4,
+      7,
+      1479,
+      12,
+      72,
+      37,
+      335
+    ],
+    [
+      22,
+      9,
+      7,
+      20,
+      1217,
+      248,
+      14,
+      267
+    ],
+    [
+      106,
+      18,
+      36,
+      61,
+      113,
+      1771,
+      58,
+      719
+    ],
+    [
+      52,
+      3,
+      13,
+      18,
+      15,
+      67,
+      1404,
+      149
+    ],
+    [
+      116,
+      5,
+      16,
+      91,
+      52,
+      242,
+      56,
+      3046
+    ]
+  ],
+  "pair_confusion_counts": {
+    "planet<->background_binary": 234,
+    "planet<->eclipsing_binary": 211,
+    "planet<->instrument_glitch": 129,
+    "pulsating_star<->starspots": 133
+  },
+  "transit_duration_at_search_cap_fraction_by_class": {
+    "planet": 0.12540792540792542,
+    "eclipsing_binary": 0.19270137961726747,
+    "background_binary": 0.1701995012468828,
+    "pulsating_star": 0.12975164723770907,
+    "flare_star": 0.25942350332594233,
+    "starspots": 0.2866065232477446,
+    "instrument_glitch": 0.26031377106333525,
+    "quiet_star": 0.13741721854304637
+  },
+  "feature_count": 76,
+  "training_rows": 18000,
+  "cnn_experiment": {
+    "cnn_camera_grouped_macro_f1_by_fold": [
+      0.5538313472751955,
+      0.5817065274070777,
+      0.532490890165891,
+      0.5523556321561951
+    ],
+    "cnn_camera_grouped_macro_f1_mean": 0.5550960992510898,
+    "cnn_shifted_macro_f1_by_fold": [
+      0.5402033535590489,
+      0.5492961272156504,
+      0.47869656501567304,
+      0.5240064674268671
+    ],
+    "cnn_best_epoch_by_fold": [
+      7,
+      14,
+      10,
+      5
+    ],
+    "cnn_device": "cuda",
+    "cross_fitted_blend_alpha_by_camera": [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "cross_fitted_blend_macro_f1_by_camera": [
+      0.7074470221800799,
+      0.6992916884344165,
+      0.6976576640785143,
+      0.6979139328013634
+    ],
+    "cross_fitted_blend_gain": 0.007902311255608807,
+    "cross_fitted_shifted_blend_delta": -0.002796714041145343,
+    "blend_accepted": true,
+    "final_test_blend_alpha": 0.5,
+    "blend_gate": "accept only if cross-fitted grouped macro-F1 improves by at least 0.003, no camera fold drops by over 0.02, and shifted macro-F1 drops by at most 0.02"
+  }
+}

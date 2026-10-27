@@ -1,0 +1,975 @@
+  {
+    "labels": [
+      "planet",
+      "eclipsing_binary",
+      "background_binary",
+      "pulsating_star",
+      "flare_star",
+      "starspots",
+      "instrument_glitch",
+      "quiet_star"
+    ],
+    "source_artifacts": "C:\\Users\\Kavya\\Downloads\\planet-hunters-round1\\artifacts_cnn",
+    "lightgbm_stratified_oof": {
+      "macro_f1": 0.7004654202571657,
+      "per_class": {
+        "planet": {
+          "precision": 0.6263157894736842,
+          "recall": 0.4993006993006993,
+          "f1": 0.5556420233463035,
+          "support": 2145
+        },
+        "eclipsing_binary": {
+          "precision": 0.8570624648283625,
+          "recall": 0.6777926123720516,
+          "f1": 0.7569582504970179,
+          "support": 2247
+        },
+        "background_binary": {
+          "precision": 0.7008928571428571,
+          "recall": 0.587281795511222,
+          "f1": 0.6390773405698779,
+          "support": 1604
+        },
+        "pulsating_star": {
+          "precision": 0.8441780821917808,
+          "recall": 0.7496198682209833,
+          "f1": 0.7940939597315436,
+          "support": 1973
+        },
+        "flare_star": {
+          "precision": 0.8256445047489823,
+          "recall": 0.6746119733924612,
+          "f1": 0.7425259304453935,
+          "support": 1804
+        },
+        "starspots": {
+          "precision": 0.5925058548009368,
+          "recall": 0.6145038167938931,
+          "f1": 0.6033043774484755,
+          "support": 2882
+        },
+        "instrument_glitch": {
+          "precision": 0.8412222887956861,
+          "recall": 0.8158047646717025,
+          "f1": 0.8283185840707965,
+          "support": 1721
+        },
+        "quiet_star": {
+          "precision": 0.5763481551561022,
+          "recall": 0.8405077262693157,
+          "f1": 0.6838028959479179,
+          "support": 3624
+        }
+      },
+      "confusion_matrix": [
+        [
+          1071,
+          43,
+          86,
+          28,
+          31,
+          355,
+          77,
+          454
+        ],
+        [
+          168,
+          1523,
+          237,
+          23,
+          14,
+          122,
+          13,
+          147
+        ],
+        [
+          148,
+          172,
+          942,
+          32,
+          20,
+          112,
+          10,
+          168
+        ],
+        [
+          27,
+          4,
+          7,
+          1479,
+          12,
+          72,
+          37,
+          335
+        ],
+        [
+          22,
+          9,
+          7,
+          20,
+          1217,
+          248,
+          14,
+          267
+        ],
+        [
+          106,
+          18,
+          36,
+          61,
+          113,
+          1771,
+          58,
+          719
+        ],
+        [
+          52,
+          3,
+          13,
+          18,
+          15,
+          67,
+          1404,
+          149
+        ],
+        [
+          116,
+          5,
+          16,
+          91,
+          52,
+          242,
+          56,
+          3046
+        ]
+      ],
+      "non_quiet_predicted_quiet": 2239,
+      "predicted_quiet_by_true_class": {
+        "planet": 454,
+        "eclipsing_binary": 147,
+        "background_binary": 168,
+        "pulsating_star": 335,
+        "flare_star": 267,
+        "starspots": 719,
+        "instrument_glitch": 149
+      }
+    },
+    "planet_recall_by_tmag_and_bls_snr": {
+      "tmag": [
+        {
+          "range": "[7.594, 10.9)",
+          "support": 536,
+          "planet_recall": 0.417910447761194,
+          "predicted_starspots": 123,
+          "predicted_quiet": 146
+        },
+        {
+          "range": "[10.9, 12.61)",
+          "support": 536,
+          "planet_recall": 0.5335820895522388,
+          "predicted_starspots": 92,
+          "predicted_quiet": 111
+        },
+        {
+          "range": "[12.61, 13.94)",
+          "support": 536,
+          "planet_recall": 0.5242537313432836,
+          "predicted_starspots": 81,
+          "predicted_quiet": 97
+        },
+        {
+          "range": "[13.94, 15.48]",
+          "support": 537,
+          "planet_recall": 0.521415270018622,
+          "predicted_starspots": 59,
+          "predicted_quiet": 100
+        }
+      ],
+      "bls_snr": [
+        {
+          "range": "[2.576, 4.726)",
+          "support": 536,
+          "planet_recall": 0.11380597014925373,
+          "predicted_starspots": 81,
+          "predicted_quiet": 333
+        },
+        {
+          "range": "[4.726, 6.944)",
+          "support": 536,
+          "planet_recall": 0.6082089552238806,
+          "predicted_starspots": 51,
+          "predicted_quiet": 103
+        },
+        {
+          "range": "[6.944, 10.68)",
+          "support": 536,
+          "planet_recall": 0.7126865671641791,
+          "predicted_starspots": 79,
+          "predicted_quiet": 17
+        },
+        {
+          "range": "[10.68, 32.37]",
+          "support": 537,
+          "planet_recall": 0.5623836126629422,
+          "predicted_starspots": 144,
+          "predicted_quiet": 1
+        }
+      ]
+    },
+    "camera_grouped_lightgbm": {
+      "macro_f1": 0.692942916253066,
+      "per_class": {
+        "planet": {
+          "precision": 0.6054619407321324,
+          "recall": 0.4857808857808858,
+          "f1": 0.5390584583548887,
+          "support": 2145
+        },
+        "eclipsing_binary": {
+          "precision": 0.8518105849582173,
+          "recall": 0.680462839341344,
+          "f1": 0.7565561603166749,
+          "support": 2247
+        },
+        "background_binary": {
+          "precision": 0.7050796057619408,
+          "recall": 0.5798004987531172,
+          "f1": 0.6363325350667123,
+          "support": 1604
+        },
+        "pulsating_star": {
+          "precision": 0.861803084223013,
+          "recall": 0.7364419665484034,
+          "f1": 0.794206067231484,
+          "support": 1973
+        },
+        "flare_star": {
+          "precision": 0.8325225851285615,
+          "recall": 0.664079822616408,
+          "f1": 0.7388220783225409,
+          "support": 1804
+        },
+        "starspots": {
+          "precision": 0.5774555042847725,
+          "recall": 0.607911172796669,
+          "f1": 0.592292089249493,
+          "support": 2882
+        },
+        "instrument_glitch": {
+          "precision": 0.7970604861503674,
+          "recall": 0.8192911098198722,
+          "f1": 0.8080229226361032,
+          "support": 1721
+        },
+        "quiet_star": {
+          "precision": 0.5738017949207561,
+          "recall": 0.8291942604856513,
+          "f1": 0.6782530188466313,
+          "support": 3624
+        }
+      },
+      "confusion_matrix": [
+        [
+          1042,
+          53,
+          74,
+          28,
+          24,
+          380,
+          82,
+          462
+        ],
+        [
+          163,
+          1529,
+          228,
+          24,
+          17,
+          127,
+          18,
+          141
+        ],
+        [
+          148,
+          179,
+          930,
+          21,
+          18,
+          119,
+          21,
+          168
+        ],
+        [
+          26,
+          6,
+          9,
+          1453,
+          14,
+          76,
+          50,
+          339
+        ],
+        [
+          27,
+          8,
+          11,
+          16,
+          1198,
+          262,
+          17,
+          265
+        ],
+        [
+          133,
+          16,
+          34,
+          58,
+          95,
+          1752,
+          80,
+          714
+        ],
+        [
+          60,
+          1,
+          10,
+          14,
+          17,
+          66,
+          1410,
+          143
+        ],
+        [
+          122,
+          3,
+          23,
+          72,
+          56,
+          252,
+          91,
+          3005
+        ]
+      ],
+      "non_quiet_predicted_quiet": 2232,
+      "predicted_quiet_by_true_class": {
+        "planet": 462,
+        "eclipsing_binary": 141,
+        "background_binary": 168,
+        "pulsating_star": 339,
+        "flare_star": 265,
+        "starspots": 714,
+        "instrument_glitch": 143
+      }
+    },
+    "camera_grouped_cnn": {
+      "macro_f1": 0.5555793494289927,
+      "per_class": {
+        "planet": {
+          "precision": 0.5274056029232643,
+          "recall": 0.4037296037296037,
+          "f1": 0.4573541061526274,
+          "support": 2145
+        },
+        "eclipsing_binary": {
+          "precision": 0.7551912568306011,
+          "recall": 0.6150422785936804,
+          "f1": 0.6779494726514594,
+          "support": 2247
+        },
+        "background_binary": {
+          "precision": 0.4807692307692308,
+          "recall": 0.43640897755610975,
+          "f1": 0.45751633986928103,
+          "support": 1604
+        },
+        "pulsating_star": {
+          "precision": 0.5258913412563667,
+          "recall": 0.627977698935631,
+          "f1": 0.5724185724185724,
+          "support": 1973
+        },
+        "flare_star": {
+          "precision": 0.780690537084399,
+          "recall": 0.676829268292683,
+          "f1": 0.7250593824228029,
+          "support": 1804
+        },
+        "starspots": {
+          "precision": 0.5353535353535354,
+          "recall": 0.33102012491325467,
+          "f1": 0.4090909090909091,
+          "support": 2882
+        },
+        "instrument_glitch": {
+          "precision": 0.5006473888649116,
+          "recall": 0.674026728646136,
+          "f1": 0.5745418524021793,
+          "support": 1721
+        },
+        "quiet_star": {
+          "precision": 0.49000593706708884,
+          "recall": 0.6832229580573952,
+          "f1": 0.5707041604241098,
+          "support": 3624
+        }
+      },
+      "confusion_matrix": [
+        [
+          866,
+          52,
+          177,
+          101,
+          34,
+          237,
+          212,
+          466
+        ],
+        [
+          123,
+          1382,
+          378,
+          75,
+          24,
+          89,
+          67,
+          109
+        ],
+        [
+          187,
+          300,
+          700,
+          83,
+          26,
+          79,
+          90,
+          139
+        ],
+        [
+          44,
+          5,
+          24,
+          1239,
+          39,
+          89,
+          120,
+          413
+        ],
+        [
+          21,
+          32,
+          13,
+          100,
+          1221,
+          133,
+          55,
+          229
+        ],
+        [
+          146,
+          44,
+          90,
+          314,
+          97,
+          954,
+          265,
+          972
+        ],
+        [
+          105,
+          10,
+          19,
+          105,
+          28,
+          45,
+          1160,
+          249
+        ],
+        [
+          150,
+          5,
+          55,
+          339,
+          95,
+          156,
+          348,
+          2476
+        ]
+      ],
+      "non_quiet_predicted_quiet": 2577,
+      "predicted_quiet_by_true_class": {
+        "planet": 466,
+        "eclipsing_binary": 109,
+        "background_binary": 139,
+        "pulsating_star": 413,
+        "flare_star": 229,
+        "starspots": 972,
+        "instrument_glitch": 249
+      }
+    },
+    "blend": {
+      "fixed_alpha_camera_grouped_scores": {
+        "0.0": {
+          "mean": 0.6926752656179848,
+          "folds": [
+            0.7041971266050541,
+            0.6819170747731483,
+            0.6931337612489878,
+            0.691453099844749
+          ]
+        },
+        "0.05": {
+          "mean": 0.6934642606910918,
+          "folds": [
+            0.7031716124982945,
+            0.6836468937868161,
+            0.6948381586159919,
+            0.6922003778632648
+          ]
+        },
+        "0.1": {
+          "mean": 0.6948509112780308,
+          "folds": [
+            0.7039200522678588,
+            0.6863406200506346,
+            0.6955366608999978,
+            0.6936063118936315
+          ]
+        },
+        "0.15": {
+          "mean": 0.6959081840765573,
+          "folds": [
+            0.7044721211956726,
+            0.6884578382823612,
+            0.6975134889970167,
+            0.693189287831179
+          ]
+        },
+        "0.2": {
+          "mean": 0.6975307060450334,
+          "folds": [
+            0.7055207512327188,
+            0.691387310526099,
+            0.6991889325293885,
+            0.694025829891927
+          ]
+        },
+        "0.25": {
+          "mean": 0.6994461181744533,
+          "folds": [
+            0.7061520357533295,
+            0.6947655682167806,
+            0.7013667032779052,
+            0.6955001654497976
+          ]
+        },
+        "0.3": {
+          "mean": 0.7008817347264964,
+          "folds": [
+            0.7064413562534189,
+            0.6966022963854921,
+            0.7039963619534763,
+            0.6964869243135983
+          ]
+        },
+        "0.35": {
+          "mean": 0.7021134462749173,
+          "folds": [
+            0.706094641361345,
+            0.6981787548502734,
+            0.7050271434798746,
+            0.6991532454081765
+          ]
+        },
+        "0.4": {
+          "mean": 0.7034878165470486,
+          "folds": [
+            0.7061654372231632,
+            0.7002584467728244,
+            0.7057616064097159,
+            0.7017657757824909
+          ]
+        },
+        "0.45": {
+          "mean": 0.7032754505381863,
+          "folds": [
+            0.7059830923590771,
+            0.7005958253069946,
+            0.7061093052434233,
+            0.7004135792432505
+          ]
+        },
+        "0.5": {
+          "mean": 0.7005775768735936,
+          "folds": [
+            0.7074470221800799,
+            0.6992916884344165,
+            0.6976576640785143,
+            0.6979139328013634
+          ]
+        }
+      },
+      "cross_fitted_alpha_by_camera": [
+        0.4,
+        0.4,
+        0.4,
+        0.45
+      ],
+      "cross_fitted_blend_macro_f1": 0.7031497674122386,
+      "cross_fitted_blend_fold_scores": [
+        0.7061654372231632,
+        0.7002584467728244,
+        0.7057616064097159,
+        0.7004135792432505
+      ],
+      "cross_fitted_shifted_blend_macro_f1": 0.6933550527519805,
+      "cross_fitted_shifted_blend_delta": 0.008831910708206214,
+      "cross_fitted_blend_per_class": {
+        "macro_f1": 0.7035306003074357,
+        "per_class": {
+          "planet": {
+            "precision": 0.6440781440781441,
+            "recall": 0.49184149184149184,
+            "f1": 0.5577583928099392,
+            "support": 2145
+          },
+          "eclipsing_binary": {
+            "precision": 0.8664013644115975,
+            "recall": 0.678237650200267,
+            "f1": 0.7608587119321019,
+            "support": 2247
+          },
+          "background_binary": {
+            "precision": 0.7094339622641509,
+            "recall": 0.5860349127182045,
+            "f1": 0.6418572891771935,
+            "support": 1604
+          },
+          "pulsating_star": {
+            "precision": 0.854057209573847,
+            "recall": 0.7415103902686264,
+            "f1": 0.7938144329896907,
+            "support": 1973
+          },
+          "flare_star": {
+            "precision": 0.8564527260179434,
+            "recall": 0.6879157427937915,
+            "f1": 0.7629880110667077,
+            "support": 1804
+          },
+          "starspots": {
+            "precision": 0.6029462144570058,
+            "recall": 0.6106870229007634,
+            "f1": 0.6067919324254439,
+            "support": 2882
+          },
+          "instrument_glitch": {
+            "precision": 0.8060538116591929,
+            "recall": 0.8355607205113306,
+            "f1": 0.8205420827389444,
+            "support": 1721
+          },
+          "quiet_star": {
+            "precision": 0.5706632181784592,
+            "recall": 0.8523730684326711,
+            "f1": 0.6836339493194644,
+            "support": 3624
+          }
+        },
+        "confusion_matrix": [
+          [
+            1055,
+            34,
+            82,
+            27,
+            19,
+            369,
+            85,
+            474
+          ],
+          [
+            166,
+            1524,
+            243,
+            26,
+            14,
+            109,
+            19,
+            146
+          ],
+          [
+            148,
+            176,
+            940,
+            23,
+            18,
+            111,
+            19,
+            169
+          ],
+          [
+            18,
+            2,
+            7,
+            1463,
+            12,
+            66,
+            47,
+            358
+          ],
+          [
+            17,
+            7,
+            3,
+            18,
+            1241,
+            239,
+            12,
+            267
+          ],
+          [
+            92,
+            12,
+            25,
+            62,
+            84,
+            1760,
+            82,
+            765
+          ],
+          [
+            49,
+            1,
+            8,
+            20,
+            13,
+            47,
+            1438,
+            145
+          ],
+          [
+            93,
+            3,
+            17,
+            74,
+            48,
+            218,
+            82,
+            3089
+          ]
+        ],
+        "non_quiet_predicted_quiet": 2324,
+        "predicted_quiet_by_true_class": {
+          "planet": 474,
+          "eclipsing_binary": 146,
+          "background_binary": 169,
+          "pulsating_star": 358,
+          "flare_star": 267,
+          "starspots": 765,
+          "instrument_glitch": 145
+        }
+      },
+      "ungated_full_oof_multipliers": {
+        "planet": 1.0,
+        "eclipsing_binary": 0.8999999761581421,
+        "background_binary": 0.800000011920929,
+        "pulsating_star": 0.6499999761581421,
+        "flare_star": 0.800000011920929,
+        "starspots": 1.0,
+        "instrument_glitch": 0.6499999761581421,
+        "quiet_star": 1.100000023841858
+      },
+      "ungated_full_oof_macro_f1_before": 0.7035306003074357,
+      "ungated_full_oof_macro_f1_after": 0.7063168055664736,
+      "nested_multiplier_macro_f1_before": 0.7031497674122386,
+      "nested_multiplier_macro_f1_after": 0.7023493372480019,
+      "nested_multiplier_gain": -0.0008004301642366984,
+      "nested_multiplier_by_camera": [
+        {
+          "planet": 1.100000023841858,
+          "eclipsing_binary": 1.100000023841858,
+          "background_binary": 1.0,
+          "pulsating_star": 0.800000011920929,
+          "flare_star": 1.0,
+          "starspots": 1.0,
+          "instrument_glitch": 0.6499999761581421,
+          "quiet_star": 1.100000023841858
+        },
+        {
+          "planet": 0.8999999761581421,
+          "eclipsing_binary": 0.800000011920929,
+          "background_binary": 1.0,
+          "pulsating_star": 0.800000011920929,
+          "flare_star": 1.0,
+          "starspots": 1.0,
+          "instrument_glitch": 0.800000011920929,
+          "quiet_star": 1.25
+        },
+        {
+          "planet": 0.800000011920929,
+          "eclipsing_binary": 1.100000023841858,
+          "background_binary": 1.0,
+          "pulsating_star": 0.800000011920929,
+          "flare_star": 0.6499999761581421,
+          "starspots": 1.0,
+          "instrument_glitch": 0.6499999761581421,
+          "quiet_star": 1.25
+        },
+        {
+          "planet": 1.0,
+          "eclipsing_binary": 0.8999999761581421,
+          "background_binary": 0.800000011920929,
+          "pulsating_star": 0.800000011920929,
+          "flare_star": 0.800000011920929,
+          "starspots": 1.0,
+          "instrument_glitch": 0.6499999761581421,
+          "quiet_star": 1.25
+        }
+      ],
+      "ungated_full_oof_per_class_after_multipliers": {
+        "macro_f1": 0.7063168055664736,
+        "per_class": {
+          "planet": {
+            "precision": 0.6255813953488372,
+            "recall": 0.5016317016317017,
+            "f1": 0.5567917205692109,
+            "support": 2145
+          },
+          "eclipsing_binary": {
+            "precision": 0.8652878703186138,
+            "recall": 0.6889185580774366,
+            "f1": 0.7670961347869177,
+            "support": 2247
+          },
+          "background_binary": {
+            "precision": 0.747702589807853,
+            "recall": 0.5579800498753117,
+            "f1": 0.6390574794716173,
+            "support": 1604
+          },
+          "pulsating_star": {
+            "precision": 0.9235836627140975,
+            "recall": 0.7105930055752661,
+            "f1": 0.8032082497851618,
+            "support": 1973
+          },
+          "flare_star": {
+            "precision": 0.8836363636363637,
+            "recall": 0.6735033259423503,
+            "f1": 0.764391318024536,
+            "support": 1804
+          },
+          "starspots": {
+            "precision": 0.5980621450050116,
+            "recall": 0.6210964607911172,
+            "f1": 0.6093617021276596,
+            "support": 2882
+          },
+          "instrument_glitch": {
+            "precision": 0.8681528662420382,
+            "recall": 0.7919814061592098,
+            "f1": 0.8283196596779094,
+            "support": 1721
+          },
+          "quiet_star": {
+            "precision": 0.5529290853031861,
+            "recall": 0.890728476821192,
+            "f1": 0.6823081800887761,
+            "support": 3624
+          }
+        },
+        "confusion_matrix": [
+          [
+            1076,
+            32,
+            65,
+            14,
+            12,
+            374,
+            59,
+            513
+          ],
+          [
+            177,
+            1548,
+            204,
+            11,
+            9,
+            121,
+            9,
+            168
+          ],
+          [
+            172,
+            188,
+            895,
+            12,
+            14,
+            113,
+            12,
+            198
+          ],
+          [
+            27,
+            1,
+            6,
+            1402,
+            10,
+            87,
+            29,
+            411
+          ],
+          [
+            19,
+            7,
+            1,
+            7,
+            1215,
+            257,
+            8,
+            290
+          ],
+          [
+            92,
+            10,
+            14,
+            35,
+            65,
+            1790,
+            45,
+            831
+          ],
+          [
+            70,
+            1,
+            7,
+            10,
+            13,
+            58,
+            1363,
+            199
+          ],
+          [
+            87,
+            2,
+            5,
+            27,
+            37,
+            193,
+            45,
+            3228
+          ]
+        ],
+        "non_quiet_predicted_quiet": 2610,
+        "predicted_quiet_by_true_class": {
+          "planet": 513,
+          "eclipsing_binary": 168,
+          "background_binary": 198,
+          "pulsating_star": 411,
+          "flare_star": 290,
+          "starspots": 831,
+          "instrument_glitch": 199
+        }
+      }
+    }
+  }
