@@ -132,6 +132,11 @@ def main():
     print('\nPer-class CV Classification Report:')
     print(classification_report(y, oof_preds_labels))
     
+    # Save probability caches for ensembling with CadenceNet CNN
+    np.save('oof_gbdt_probs.npy', oof_probs)
+    np.save('test_gbdt_probs.npy', test_probs)
+    print('Saved oof_gbdt_probs.npy and test_gbdt_probs.npy!')
+    
     # 3. Test Predictions & Submission Generation
     print('\n=== STEP 3: Generate Upload 2 Submission ===')
     test_preds_code = np.argmax(test_probs, axis=1)
